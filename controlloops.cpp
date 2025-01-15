@@ -31,3 +31,5 @@ int main()
 
     return 0;
 }
+
+/* here in above program the concept is that in line 12 to 30 there is logic is present. */
