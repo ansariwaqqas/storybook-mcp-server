@@ -136,7 +136,7 @@ expression ? statement_1 : statement_2;
 Flowchart of Conditional Operator
 https://media.geeksforgeeks.org/wp-content/uploads/20230422155818/flowchart-of-conditional-or-ternary-operator-in-c.png
 
- */
+*/
 
 // if statement program
 #include <iostream>
@@ -155,15 +155,17 @@ int main()
 #include <iostream>
 using namespace std;
 
-int main() {
+int main() 
+{
     int n = 5;
-
     // Using if-else to determine if the number is positive
     // or non positive
-    if (n > 0) {
+    if (n > 0) 
+    {
         cout << "number is positive.";
     }
-    else {
+    else 
+    {
         cout << "number is non-positive.";
     }
     return 0;
@@ -173,23 +175,27 @@ int main() {
 #include <iostream>
 using namespace std;
 
-int main() {
+int main() 
+{
     int age = 18;
 
     // if this condition is true child is printed
-    if (age < 13) {
+    if (age < 13) 
+    {
         cout << "child";
     }
- 
     // if above above if statement is not true then we check
+    
     // this else if condition if it evalutes to true print
     // growing age
-    else if (age >= 1 and age <= 18) {
+    else if (age >= 1 and age <= 18) 
+    {
         cout << "Growing stage";
     }
 
     // if none of above condition is true print adult
-    else {
+    else 
+    {
         cout << "adult";
     }
     return 0;
@@ -199,26 +205,32 @@ int main() {
 #include <iostream>
 using namespace std;
 
-int main() {
+int main() 
+{
     int n = 44;
   
     // to check if n is positive
-    if (n > 0) {
+    if (n > 0) 
+    {
 
         // to check if the positive n is even or odd
-        if (n % 2 == 0) {
+        if (n % 2 == 0) 
+        {
             cout << "positive and even number";
         }
-        else {
+        else 
+        {
             cout << "positive and odd number";
         }
     }
     // to check if the n is 0
-    else if (n == 0) {
+    else if (n == 0) 
+    {
         cout << "the number is zero";
     }
     // to check if the n is negative
-    else {
+    else 
+    {
         cout << "the number is negative";
     }
     return 0;
@@ -230,7 +242,8 @@ using namespace std;
 
 int main() {
     char c = 'B';
-    switch (c) {
+    switch (c) 
+    {
         
     // if the input character is A then print GFG
     case 'A':
