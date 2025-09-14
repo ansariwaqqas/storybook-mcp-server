@@ -20,8 +20,8 @@
     "storybook",
     "model-context-protocol"
   ],
-  "author": "",
-  "license": "MIT",
+  "author": "Stefano Amorelli",
+  "license": "AGPL-3.0",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.0.0",
     "puppeteer": "^23.0.0",
