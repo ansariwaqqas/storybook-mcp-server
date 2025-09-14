@@ -62,7 +62,7 @@ Get complete story information including parameters, args, and prop definitions.
 ```
 
 ### Visual Testing
-Capture screenshots of individual or all stories.
+Capture screenshots of individual or all stories. Screenshots can be saved to disk or returned directly in the response for immediate viewing.
 
 **Example:**
 > "Take a screenshot of the primary button story"
@@ -72,9 +72,12 @@ Capture screenshots of individual or all stories.
   "success": true,
   "path": "./screenshots/components-button--primary.png",
   "viewport": { "width": 1280, "height": 720 },
-  "message": "Screenshot saved successfully"
+  "image": "base64_encoded_image_data...",
+  "message": "Screenshot captured successfully"
 }
 ```
+
+The screenshot is both saved locally and returned in the response, allowing Claude to immediately see and analyze the visual output.
 
 ### Responsive Testing
 Test components across multiple viewport sizes.
