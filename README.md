@@ -9,6 +9,8 @@
 
 A TypeScript MCP (Model Context Protocol) server that provides comprehensive access to Storybook instances. This server enables AI assistants to interact with Storybook components, stories, and capture screenshots.
 
+The server can connect to any running Storybook instance - whether it's your local development server, a deployed production Storybook, or even public component libraries.
+
 ## Features
 
 ### Component Discovery
@@ -97,6 +99,43 @@ Test components across multiple viewport sizes.
 ### Smart Detection
 Automatically detects Storybook version and API endpoints for compatibility across different Storybook setups.
 
+## Common Use Cases
+
+### Local Development
+Connect to your local Storybook during development:
+
+> "Connect to my local Storybook at localhost:6006 and show me all components"
+
+```bash
+# Your Storybook running locally
+npm run storybook  # Usually runs on http://localhost:6006
+```
+
+### Production Storybook
+Analyze deployed component libraries:
+
+> "Check the Material UI Storybook at https://mui.com/storybook/ and show me their Button variants"
+
+### Visual Regression Testing
+Compare component appearances across changes:
+
+> "Take screenshots of all Button stories in both desktop and mobile viewports"
+
+### Component Documentation
+Extract prop types and usage examples:
+
+> "Generate a markdown table of all props for the DataGrid component with their types and default values"
+
+### Design System Audit
+Review component library completeness:
+
+> "List all components and tell me which ones are missing accessibility features or documentation"
+
+### Cross-Browser Testing
+Capture components in different states:
+
+> "Screenshot the Modal component in all its states: open, closed, loading, and error"
+
 ## Installation
 
 ### Using with Claude Desktop
@@ -179,6 +218,7 @@ yarn storybook
 
 You can customize the server behavior through environment variables in your Claude Desktop MCP configuration:
 
+**Local Development Server:**
 ```json
 {
   "mcpServers": {
@@ -186,9 +226,42 @@ You can customize the server behavior through environment variables in your Clau
       "command": "npx",
       "args": ["storybook-mcp-server"],
       "env": {
-        "STORYBOOK_URL": "http://localhost:9009",
-        "OUTPUT_DIR": "./my-screenshots",
-        "LOG_LEVEL": "debug"
+        "STORYBOOK_URL": "http://localhost:6006",
+        "OUTPUT_DIR": "./screenshots",
+        "LOG_LEVEL": "info"
+      }
+    }
+  }
+}
+```
+
+**Production Storybook:**
+```json
+{
+  "mcpServers": {
+    "storybook": {
+      "command": "npx",
+      "args": ["storybook-mcp-server"],
+      "env": {
+        "STORYBOOK_URL": "https://your-company.com/storybook",
+        "OUTPUT_DIR": "./screenshots/production",
+        "LOG_LEVEL": "info"
+      }
+    }
+  }
+}
+```
+
+**Public Component Library:**
+```json
+{
+  "mcpServers": {
+    "storybook": {
+      "command": "npx",
+      "args": ["storybook-mcp-server"],
+      "env": {
+        "STORYBOOK_URL": "https://storybookjs.netlify.app/vue-kitchen-sink",
+        "OUTPUT_DIR": "./screenshots/vue-components"
       }
     }
   }
