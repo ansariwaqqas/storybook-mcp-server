@@ -19,15 +19,11 @@ Browse and list all components in your Storybook instance.
 **Example:**
 > "What components are available in my Storybook?"
 
-```json
-{
-  "components": [
-    { "id": "components-button", "name": "Button", "count": 5 },
-    { "id": "components-card", "name": "Card", "count": 3 },
-    { "id": "components-modal", "name": "Modal", "count": 2 }
-  ]
-}
-```
+Claude's response:
+> I found 3 components in your Storybook:
+> - **Button** (5 stories)
+> - **Card** (3 stories) 
+> - **Modal** (2 stories)
 
 ### Story Management
 Access all stories with filtering by component.
@@ -35,15 +31,11 @@ Access all stories with filtering by component.
 **Example:**
 > "Show me all the Button stories"
 
-```json
-{
-  "stories": [
-    { "id": "components-button--primary", "name": "Primary", "title": "Components/Button" },
-    { "id": "components-button--secondary", "name": "Secondary", "title": "Components/Button" },
-    { "id": "components-button--disabled", "name": "Disabled", "title": "Components/Button" }
-  ]
-}
-```
+Claude's response:
+> The Button component has 3 stories:
+> - **Primary** - Default primary button style
+> - **Secondary** - Secondary button variant
+> - **Disabled** - Button in disabled state
 
 ### Detailed Inspection
 Get complete story information including parameters, args, and prop definitions.
@@ -51,35 +43,35 @@ Get complete story information including parameters, args, and prop definitions.
 **Example:**
 > "What props does the Button component accept?"
 
-```json
-{
-  "argTypes": {
-    "label": { "type": "string", "description": "Button label", "required": true },
-    "variant": { "type": "enum", "options": ["primary", "secondary", "danger"] },
-    "size": { "type": "enum", "options": ["small", "medium", "large"], "defaultValue": "medium" },
-    "disabled": { "type": "boolean", "defaultValue": false },
-    "onClick": { "type": "function", "description": "Click handler" }
-  }
-}
-```
+Claude's response:
+> The Button component accepts the following props:
+> 
+> | Prop | Type | Description | Default |
+> |------|------|-------------|---------|
+> | `label` | string | Button label text | *required* |
+> | `variant` | "primary" \| "secondary" \| "danger" | Button style variant | "primary" |
+> | `size` | "small" \| "medium" \| "large" | Button size | "medium" |
+> | `disabled` | boolean | Disable button interaction | false |
+> | `onClick` | function | Click event handler | - |
 
 ### Visual Testing
-Capture screenshots of individual or all stories. Screenshots can be saved to disk or returned directly in the response for immediate viewing.
+Capture screenshots of individual or all stories. Claude can see and analyze the screenshots immediately.
 
 **Example:**
 > "Take a screenshot of the primary button story"
 
-```json
-{
-  "success": true,
-  "path": "./screenshots/components-button--primary.png",
-  "viewport": { "width": 1280, "height": 720 },
-  "image": "base64_encoded_image_data...",
-  "message": "Screenshot captured successfully"
-}
-```
-
-The screenshot is both saved locally and returned in the response, allowing Claude to immediately see and analyze the visual output.
+Claude's response:
+> I've captured a screenshot of the primary button story. Here's what I can see:
+> 
+> [Screenshot displayed in conversation]
+> 
+> The button appears with:
+> - Blue background (#007bff)
+> - White text reading "Click me"
+> - Rounded corners with 4px radius
+> - Standard padding and hover state
+> 
+> The screenshot has been saved to `./screenshots/components-button--primary.png`
 
 ### Responsive Testing
 Test components across multiple viewport sizes.
@@ -87,14 +79,18 @@ Test components across multiple viewport sizes.
 **Example:**
 > "Capture the Card component at mobile size (375x667)"
 
-```json
-{
-  "success": true,
-  "path": "./screenshots/components-card--default_375x667.png",
-  "viewport": { "width": 375, "height": 667 },
-  "message": "Mobile screenshot saved successfully"
-}
-```
+Claude's response:
+> I've captured the Card component at mobile viewport (375x667):
+> 
+> [Screenshot displayed in conversation]
+> 
+> At mobile size, the card:
+> - Stacks content vertically
+> - Uses full width with 16px padding
+> - Shows responsive text sizing
+> - Image scales appropriately
+> 
+> Saved to `./screenshots/components-card--default_375x667.png`
 
 ### Smart Detection
 Automatically detects Storybook version and API endpoints for compatibility across different Storybook setups.

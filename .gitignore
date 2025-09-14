@@ -51,6 +51,9 @@ Thumbs.db
 
 # Screenshots output directory
 screenshots/
+
+# Local Claude configuration
+claude-config.json
 *.png
 *.jpg
 *.jpeg
