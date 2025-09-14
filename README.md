@@ -22,7 +22,12 @@ A TypeScript MCP (Model Context Protocol) server that provides comprehensive acc
 
 ### Using with Claude Desktop
 
-1. **Clone and build the MCP server:**
+1. **Install the MCP server via npm:**
+   ```bash
+   npm install -g storybook-mcp-server
+   ```
+
+   Or clone and build locally:
    ```bash
    git clone https://github.com/stefanoamorelli/storybook-mcp-server.git
    cd storybook-mcp-server
