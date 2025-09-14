@@ -1,27 +1,34 @@
-# Storybook MCP Server
+# 📚 Storybook MCP Server
+
+[![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.7-blue?logo=typescript)](https://www.typescriptlang.org/)
+[![MCP](https://img.shields.io/badge/MCP-1.0-green?logo=anthropic)](https://modelcontextprotocol.io)
+[![Storybook](https://img.shields.io/badge/Storybook-Compatible-ff4785?logo=storybook)](https://storybook.js.org/)
+[![Puppeteer](https://img.shields.io/badge/Puppeteer-23.0-40B5A4?logo=puppeteer)](https://pptr.dev/)
+[![Node.js](https://img.shields.io/badge/Node.js-18%2B-339933?logo=node.js)](https://nodejs.org/)
 
 A TypeScript MCP (Model Context Protocol) server that provides comprehensive access to Storybook instances. This server enables AI assistants to interact with Storybook components, stories, and capture screenshots.
 
-## Features
+## ✨ Features
 
-- **List Components**: Get all available components in your Storybook instance
-- **List Stories**: Retrieve all stories, with optional filtering by component
-- **Get Story Details**: Access detailed information about specific stories including parameters and args
-- **Extract Component Props**: Get complete prop definitions and arg types for components
-- **Capture Screenshots**: Take screenshots of individual stories or all stories with customizable viewports
-- **Multi-viewport Support**: Capture screenshots across different screen sizes
+- 🧩 **List Components**: Get all available components in your Storybook instance
+- 📖 **List Stories**: Retrieve all stories, with optional filtering by component
+- 🔍 **Get Story Details**: Access detailed information about specific stories including parameters and args
+- 🎯 **Extract Component Props**: Get complete prop definitions and arg types for components
+- 📸 **Capture Screenshots**: Take screenshots of individual stories or all stories with customizable viewports
+- 📱 **Multi-viewport Support**: Capture screenshots across different screen sizes
 
-## Installation
+## 🚀 Installation
 
-### Using with Claude Code
+### Using with Claude Desktop
 
 1. **Install the MCP server via npm:**
    ```bash
    npm install -g @mcp/storybook-server
    ```
 
-2. **Configure Claude Code:**
-   Add the following to your Claude Code MCP settings:
+2. **Configure Claude Desktop:**
+   Add the following to your Claude Desktop MCP settings:
    ```json
    {
      "mcpServers": {
@@ -55,9 +62,9 @@ If you want to use the screenshot functionality, Puppeteer requires Chrome/Chrom
 
 **Note:** Puppeteer will handle Chrome/Chromium automatically, so manual installation is typically not required.
 
-## Usage
+## 📋 Usage
 
-Once configured in Claude Code, the MCP server will automatically connect to your Storybook instance. Make sure your Storybook is running before using the tools:
+Once configured in Claude Desktop, the MCP server will automatically connect to your Storybook instance. Make sure your Storybook is running before using the tools:
 
 ```bash
 # Start your Storybook instance (in your project directory)
@@ -68,7 +75,7 @@ yarn storybook
 
 ### Configuration Options
 
-You can customize the server behavior through environment variables in your Claude Code MCP configuration:
+You can customize the server behavior through environment variables in your Claude Desktop MCP configuration:
 
 ```json
 {
@@ -92,7 +99,7 @@ You can customize the server behavior through environment variables in your Clau
 - `--output-dir`, `-output`: Directory to save screenshots (default: ./screenshots)
 - `--log-level`: Logging level [error, warn, info, debug] (default: info)
 
-## MCP Tools Available
+## 🛠️ MCP Tools Available
 
 ### `storybook_list_components`
 Lists all components available in the Storybook instance.
@@ -132,7 +139,7 @@ Captures screenshots of all stories.
   - `width`: Viewport width in pixels
   - `height`: Viewport height in pixels
 
-## Local Development
+## 💻 Local Development
 
 For contributors and developers working on this MCP server:
 
@@ -160,7 +167,7 @@ npm run lint
 npm run format
 ```
 
-## Architecture
+## 🏗️ Architecture
 
 The server is built with:
 - **TypeScript**: For type safety and better developer experience
@@ -169,13 +176,13 @@ The server is built with:
 - **Axios**: For HTTP communication with Storybook instance
 - **Winston**: For structured logging
 
-## Requirements
+## 📦 Requirements
 
 - Node.js 18 or higher
 - A running Storybook instance
 - Chrome/Chromium (automatically downloaded by Puppeteer)
 
-## Troubleshooting
+## 🔧 Troubleshooting
 
 ### Screenshots not working?
 1. Ensure Puppeteer has downloaded Chromium: Run `npx puppeteer browsers install chrome`
@@ -187,7 +194,7 @@ The server is built with:
 2. Check for any firewall or network restrictions
 3. Try accessing the Storybook URL directly in your browser
 
-## License
+## 📄 License
 
 GNU Affero General Public License v3.0 (AGPL-3.0)
 
