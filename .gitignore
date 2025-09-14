@@ -55,6 +55,11 @@ screenshots/
 *.jpg
 *.jpeg
 
+# Test outputs
+tests/manual/test-screenshots/
+tests/manual/*.log
+tests/manual/*.json
+
 # Puppeteer
 .local-chromium/
 chrome-data/
