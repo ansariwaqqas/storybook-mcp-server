@@ -233,7 +233,7 @@ export class StorybookClient {
           }
         }
       }
-    } catch (error) {
+    } catch {
       logger.debug(`Could not extract enhanced story data for ${storyId}`);
     }
 
