@@ -11,12 +11,88 @@ A TypeScript MCP (Model Context Protocol) server that provides comprehensive acc
 
 ## Features
 
-- **Component Discovery** - Browse and list all components in your Storybook instance
-- **Story Management** - Access all stories with filtering by component
-- **Detailed Inspection** - Get complete story information including parameters, args, and prop definitions
-- **Visual Testing** - Capture screenshots of individual or all stories
-- **Responsive Testing** - Test components across multiple viewport sizes
-- **Smart Detection** - Automatically detects Storybook version and API endpoints
+### Component Discovery
+Browse and list all components in your Storybook instance.
+
+**Example:**
+> "What components are available in my Storybook?"
+
+```json
+{
+  "components": [
+    { "id": "components-button", "name": "Button", "count": 5 },
+    { "id": "components-card", "name": "Card", "count": 3 },
+    { "id": "components-modal", "name": "Modal", "count": 2 }
+  ]
+}
+```
+
+### Story Management
+Access all stories with filtering by component.
+
+**Example:**
+> "Show me all the Button stories"
+
+```json
+{
+  "stories": [
+    { "id": "components-button--primary", "name": "Primary", "title": "Components/Button" },
+    { "id": "components-button--secondary", "name": "Secondary", "title": "Components/Button" },
+    { "id": "components-button--disabled", "name": "Disabled", "title": "Components/Button" }
+  ]
+}
+```
+
+### Detailed Inspection
+Get complete story information including parameters, args, and prop definitions.
+
+**Example:**
+> "What props does the Button component accept?"
+
+```json
+{
+  "argTypes": {
+    "label": { "type": "string", "description": "Button label", "required": true },
+    "variant": { "type": "enum", "options": ["primary", "secondary", "danger"] },
+    "size": { "type": "enum", "options": ["small", "medium", "large"], "defaultValue": "medium" },
+    "disabled": { "type": "boolean", "defaultValue": false },
+    "onClick": { "type": "function", "description": "Click handler" }
+  }
+}
+```
+
+### Visual Testing
+Capture screenshots of individual or all stories.
+
+**Example:**
+> "Take a screenshot of the primary button story"
+
+```json
+{
+  "success": true,
+  "path": "./screenshots/components-button--primary.png",
+  "viewport": { "width": 1280, "height": 720 },
+  "message": "Screenshot saved successfully"
+}
+```
+
+### Responsive Testing
+Test components across multiple viewport sizes.
+
+**Example:**
+> "Capture the Card component at mobile size (375x667)"
+
+```json
+{
+  "success": true,
+  "path": "./screenshots/components-card--default_375x667.png",
+  "viewport": { "width": 375, "height": 667 },
+  "message": "Mobile screenshot saved successfully"
+}
+```
+
+### Smart Detection
+Automatically detects Storybook version and API endpoints for compatibility across different Storybook setups.
 
 ## Installation
 
