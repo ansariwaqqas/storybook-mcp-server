@@ -221,7 +221,7 @@ The server is built with:
 
 GNU Affero General Public License v3.0 (AGPL-3.0)
 
-Copyright (C) 2024 Stefano Amorelli
+Copyright (C) 2024 [Stefano Amorelli](https://amorelli.tech) <[stefano@amorelli.tech](mailto:stefano@amorelli.tech)>
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as published
@@ -235,3 +235,7 @@ GNU Affero General Public License for more details.
 
 You should have received a copy of the GNU Affero General Public License
 along with this program. If not, see <https://www.gnu.org/licenses/>.
+
+### Commercial Licensing
+
+For commercial use or if you need a different license, please contact [stefano@amorelli.tech](mailto:stefano@amorelli.tech) to discuss licensing options.
