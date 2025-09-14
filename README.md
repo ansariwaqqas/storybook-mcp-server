@@ -22,9 +22,12 @@ A TypeScript MCP (Model Context Protocol) server that provides comprehensive acc
 
 ### Using with Claude Desktop
 
-1. **Install the MCP server via npm:**
+1. **Clone and build the MCP server:**
    ```bash
-   npm install -g @mcp/storybook-server
+   git clone https://github.com/stefanoamorelli/storybook-mcp-server.git
+   cd storybook-mcp-server
+   npm install
+   npm run build
    ```
 
 2. **Configure Claude Desktop:**
@@ -33,8 +36,8 @@ A TypeScript MCP (Model Context Protocol) server that provides comprehensive acc
    {
      "mcpServers": {
        "storybook": {
-         "command": "npx",
-         "args": ["@mcp/storybook-server"],
+         "command": "node",
+         "args": ["/path/to/storybook-mcp-server/dist/index.js"],
          "env": {
            "STORYBOOK_URL": "http://localhost:6006"
          }
@@ -42,6 +45,8 @@ A TypeScript MCP (Model Context Protocol) server that provides comprehensive acc
      }
    }
    ```
+   
+   Replace `/path/to/storybook-mcp-server` with the actual path where you cloned the repository.
 
 ### Prerequisites for Screenshots
 
@@ -81,8 +86,8 @@ You can customize the server behavior through environment variables in your Clau
 {
   "mcpServers": {
     "storybook": {
-      "command": "npx",
-      "args": ["@mcp/storybook-server"],
+      "command": "node",
+      "args": ["/path/to/storybook-mcp-server/dist/index.js"],
       "env": {
         "STORYBOOK_URL": "http://localhost:9009",
         "OUTPUT_DIR": "./my-screenshots",
