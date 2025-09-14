@@ -1,0 +1,42 @@
+{
+  "name": "@mcp/storybook-server",
+  "version": "0.1.0",
+  "description": "MCP server for Storybook - provides components, stories, properties and screenshots",
+  "main": "dist/index.js",
+  "bin": {
+    "storybook-mcp": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "NODE_ENV=development tsx src/index.ts",
+    "start": "NODE_ENV=production node dist/index.js",
+    "test": "NODE_ENV=development tsx",
+    "lint": "eslint src --ext .ts",
+    "format": "prettier --write 'src/**/*.ts'",
+    "type-check": "tsc --noEmit"
+  },
+  "keywords": [
+    "mcp",
+    "storybook",
+    "model-context-protocol"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "puppeteer": "^23.0.0",
+    "axios": "^1.7.0",
+    "yargs": "^17.7.2",
+    "winston": "^3.15.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/yargs": "^17.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
+    "eslint": "^9.0.0",
+    "prettier": "^3.3.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0"
+  }
+}
