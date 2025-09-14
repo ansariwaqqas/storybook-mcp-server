@@ -13,27 +13,77 @@ A TypeScript MCP (Model Context Protocol) server that provides comprehensive acc
 
 ## Installation
 
-```bash
-npm install
-npm run build
-```
+### Using with Claude Code
+
+1. **Install the MCP server via npm:**
+   ```bash
+   npm install -g @mcp/storybook-server
+   ```
+
+2. **Configure Claude Code:**
+   Add the following to your Claude Code MCP settings:
+   ```json
+   {
+     "mcpServers": {
+       "storybook": {
+         "command": "npx",
+         "args": ["@mcp/storybook-server"],
+         "env": {
+           "STORYBOOK_URL": "http://localhost:6006"
+         }
+       }
+     }
+   }
+   ```
+
+### Prerequisites for Screenshots
+
+If you want to use the screenshot functionality, Puppeteer requires Chrome/Chromium. When you first run the screenshot command, Puppeteer will automatically download a compatible version of Chromium.
+
+**Manual Chrome Installation (optional):**
+- **macOS:** Download from [Google Chrome](https://www.google.com/chrome/)
+- **Linux:** 
+  ```bash
+  # Ubuntu/Debian
+  sudo apt-get update
+  sudo apt-get install -y chromium-browser
+  
+  # Fedora
+  sudo dnf install chromium
+  ```
+- **Windows:** Download from [Google Chrome](https://www.google.com/chrome/)
+
+**Note:** Puppeteer will handle Chrome/Chromium automatically, so manual installation is typically not required.
 
 ## Usage
 
-### Start the Server
+Once configured in Claude Code, the MCP server will automatically connect to your Storybook instance. Make sure your Storybook is running before using the tools:
 
 ```bash
-# Using default settings (Storybook at http://localhost:6006)
-npm start
+# Start your Storybook instance (in your project directory)
+npm run storybook
+# or
+yarn storybook
+```
 
-# With custom Storybook URL
-npm start -- --storybook-url http://localhost:9009
+### Configuration Options
 
-# With custom screenshot output directory
-npm start -- --output-dir ./my-screenshots
+You can customize the server behavior through environment variables in your Claude Code MCP configuration:
 
-# With environment variables
-STORYBOOK_URL=http://localhost:9009 npm start
+```json
+{
+  "mcpServers": {
+    "storybook": {
+      "command": "npx",
+      "args": ["@mcp/storybook-server"],
+      "env": {
+        "STORYBOOK_URL": "http://localhost:9009",
+        "OUTPUT_DIR": "./my-screenshots",
+        "LOG_LEVEL": "debug"
+      }
+    }
+  }
+}
 ```
 
 ### Command Line Options
@@ -82,9 +132,21 @@ Captures screenshots of all stories.
   - `width`: Viewport width in pixels
   - `height`: Viewport height in pixels
 
-## Development
+## Local Development
+
+For contributors and developers working on this MCP server:
 
 ```bash
+# Clone the repository
+git clone https://github.com/anthropics/storybook-mcp-server.git
+cd storybook-mcp-server
+
+# Install dependencies
+npm install
+
+# Build the project
+npm run build
+
 # Run in development mode with hot reload
 npm run dev
 
@@ -113,24 +175,33 @@ The server is built with:
 - A running Storybook instance
 - Chrome/Chromium (automatically downloaded by Puppeteer)
 
-## Integration with Claude
+## Troubleshooting
 
-To use this MCP server with Claude Desktop, add it to your Claude configuration:
+### Screenshots not working?
+1. Ensure Puppeteer has downloaded Chromium: Run `npx puppeteer browsers install chrome`
+2. Check that your Storybook instance is running and accessible
+3. Verify the STORYBOOK_URL in your configuration matches your running instance
 
-```json
-{
-  "mcpServers": {
-    "storybook": {
-      "command": "node",
-      "args": ["/path/to/storybook-mcp-server/dist/index.js"],
-      "env": {
-        "STORYBOOK_URL": "http://localhost:6006"
-      }
-    }
-  }
-}
-```
+### Connection issues?
+1. Verify your Storybook is running on the configured URL
+2. Check for any firewall or network restrictions
+3. Try accessing the Storybook URL directly in your browser
 
 ## License
 
-MIT
+GNU Affero General Public License v3.0 (AGPL-3.0)
+
+Copyright (C) 2024 Stefano Amorelli
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published
+by the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program. If not, see <https://www.gnu.org/licenses/>.
