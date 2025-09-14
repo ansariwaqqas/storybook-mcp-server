@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+title: Storybook MCP Server
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Stefano
+    family-names: Amorelli
+    email: stefano@amorelli.tech
+    orcid: 'https://orcid.org/0000-0000-0000-0000'
+repository-code: 'https://github.com/stefanoamorelli/storybook-mcp-server'
+url: 'https://amorelli.tech'
+abstract: >-
+  A Model Context Protocol (MCP) server that provides
+  comprehensive access to Storybook instances. This server
+  enables AI assistants to interact with Storybook
+  components, stories, and capture screenshots.
+keywords:
+  - mcp
+  - model-context-protocol
+  - storybook
+  - claude
+  - anthropic
+  - visual-testing
+  - component-testing
+  - puppeteer
+  - typescript
+license: AGPL-3.0
+version: 0.1.0
+date-released: '2025-09-14'
