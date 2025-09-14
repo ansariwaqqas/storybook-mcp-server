@@ -1,11 +1,24 @@
 {
-  "name": "@mcp/storybook-server",
+  "name": "storybook-mcp-server",
   "version": "0.1.0",
-  "description": "MCP server for Storybook - provides components, stories, properties and screenshots",
+  "description": "MCP server for Storybook - provides AI assistants access to components, stories, properties and screenshots",
   "main": "dist/index.js",
   "bin": {
-    "storybook-mcp": "dist/index.js"
+    "storybook-mcp-server": "dist/index.js"
   },
+  "files": [
+    "dist/**/*",
+    "README.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stefanoamorelli/storybook-mcp-server.git"
+  },
+  "bugs": {
+    "url": "https://github.com/stefanoamorelli/storybook-mcp-server/issues"
+  },
+  "homepage": "https://github.com/stefanoamorelli/storybook-mcp-server#readme",
   "scripts": {
     "build": "tsc",
     "dev": "NODE_ENV=development tsx src/index.ts",
@@ -17,9 +30,20 @@
   },
   "keywords": [
     "mcp",
+    "mcp-server",
     "storybook",
-    "model-context-protocol"
+    "model-context-protocol",
+    "claude",
+    "claude-desktop",
+    "anthropic",
+    "puppeteer",
+    "screenshot",
+    "visual-testing",
+    "component-testing"
   ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "author": "Stefano Amorelli",
   "license": "AGPL-3.0",
   "dependencies": {

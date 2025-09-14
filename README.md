@@ -41,6 +41,21 @@ A TypeScript MCP (Model Context Protocol) server that provides comprehensive acc
    {
      "mcpServers": {
        "storybook": {
+         "command": "npx",
+         "args": ["storybook-mcp-server"],
+         "env": {
+           "STORYBOOK_URL": "http://localhost:6006"
+         }
+       }
+     }
+   }
+   ```
+   
+   Or if installed locally, use the full path:
+   ```json
+   {
+     "mcpServers": {
+       "storybook": {
          "command": "node",
          "args": ["/path/to/storybook-mcp-server/dist/index.js"],
          "env": {
@@ -50,8 +65,6 @@ A TypeScript MCP (Model Context Protocol) server that provides comprehensive acc
      }
    }
    ```
-   
-   Replace `/path/to/storybook-mcp-server` with the actual path where you cloned the repository.
 
 ### Prerequisites for Screenshots
 
@@ -91,8 +104,8 @@ You can customize the server behavior through environment variables in your Clau
 {
   "mcpServers": {
     "storybook": {
-      "command": "node",
-      "args": ["/path/to/storybook-mcp-server/dist/index.js"],
+      "command": "npx",
+      "args": ["storybook-mcp-server"],
       "env": {
         "STORYBOOK_URL": "http://localhost:9009",
         "OUTPUT_DIR": "./my-screenshots",
